@@ -1,12 +1,14 @@
  (function () {
      'use strict';
      
-     function myController(){
+     function myController(movieApi){
          var model = this;
          
-         model.message = "message from actors";
+         model.message = movieApi.message();
          
      }
+     
+     myController.$inject = ['movieApi'];
      
       var module = angular.module("mainApp");
       module.component( "actorsList",{
